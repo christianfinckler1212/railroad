@@ -1,0 +1,33 @@
+group 'finckler'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+buildscript {
+
+    apply from: "${rootDir}/gradle/dependencies.gradle"
+
+    repositories {
+        mavenCentral()
+    }
+
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly libraries.lombok
+    //compileOnly libraries.findbugs_annotations
+
+    testCompileOnly libraries.lombok
+
+    testCompile test_libraries.junit
+}
+
+apply from: "${rootDir}/gradle/checkstyle.gradle"
+
+apply from: "${rootDir}/gradle/jacoco.gradle"

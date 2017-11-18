@@ -1,0 +1,26 @@
+/**
+ * For an example
+ * @see https://raw.githubusercontent.com/ben-manes/caffeine/master/gradle/dependencies.gradle
+ */
+ext {
+  versions = [
+    lombok: '1.16.18'
+  ]
+  test_versions = [
+    junit: '4.12'
+  ]
+  plugin_versions = [
+    checkstyle: '8.4',
+    jacoco: '0.7.9', //version 0.7.10 required to exclude generated lombok code from jacoco,
+    git_properties: '1.4.17'
+  ]
+
+  test_libraries = [
+    // https://mvnrepository.com/artifact/org.hamcrest/java-hamcrest
+
+    junit: "junit:junit:${test_versions.junit}"
+  ]
+  libraries = [
+    lombok: "org.projectlombok:lombok:${versions.lombok}",
+  ]
+}
